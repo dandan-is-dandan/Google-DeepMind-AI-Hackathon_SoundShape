@@ -1,4 +1,4 @@
-# Google-DeepMind-AI-Hackathon_SoundShape
+# Google-DeepMind-AI-Hackathon
 
 # SoundShape — Music Becomes a World
 
