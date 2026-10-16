@@ -32,39 +32,25 @@ SoundShape consists of five main processing stages:
 
 ## Gemini 4 Argon Integration
 
-Gemini 4 Argon combines musical timing and acoustic features to generate structured 3D world specifications.
+Gemini 4 Argon is used to plan structured 3D music worlds based on musical timing and measured acoustic features. The generated world blueprint defines musical sections, landscape configurations, and editable objects connected to audio properties.
 
-The generated specifications undergo automated validation to check timeline continuity, sculpture mappings, and editing parameters. The system is designed to repair invalid specifications and revalidate them before rendering.
+### Automated World Verification
 
-This architecture connects **AI-driven musical interpretation, procedural 3D world generation, and real audio editing**.
+SoundShape includes a deterministic verification system that checks scene consistency before rendering.
 
-## Key Features
+The verification process evaluates six areas:
 
-- **Music-to-World Generation:** Transform uploaded music into interactive 3D landscapes and sculptures.
-- **Spatial Music Exploration:** Navigate through World, Section, and Element views.
-- **Multi-Layer Audio Editing:** Adjust volume, bass, treble, and timbre at selected moments.
-- **Simultaneous Effects:** Apply multiple audio edits within the same time range.
-- **Before/After Comparison:** Listen to the original and modified audio passages.
-- **AI World Blueprint:** Inspect Gemini-generated world design specifications.
-- **Verification Loop:** Validate scene specifications and support automated repair of invalid outputs.
+- **Duration Fidelity:** Ensures the generated world matches the uploaded audio duration.
+- **Timeline Continuity:** Checks for gaps and overlaps between musical sections.
+- **Editable Sculpture Integrity:** Verifies that required musical controls exist.
+- **Rhythm Synchronization:** Checks chronological event placement.
+- **Landscape Archetype Differentiation:** Validates the configured landscape diversity rule.
+- **DSP Parameter Safety:** Ensures audio editing values remain within supported ranges.
 
-## Technology Stack
+The system supports local deterministic corrections and a separate Gemini API-based repair path. Verification results are calculated from actual validation checks rather than fixed success indicators.
 
-| Category | Technology |
-|---|---|
-| AI Model | Gemini 4 Argon |
-| Frontend | React, TypeScript |
-| 3D Rendering | Three.js |
-| Audio Analysis & Processing | Web Audio API, DSP |
-| AI Integration | Gemini API |
-| Deployment | Google Cloud Run |
+### Verification Results
 
-## Originality & Impact
+The verification suite passed **7 out of 7 automated tests**, including tests for invalid song durations, overlapping sections, missing sculptures, repair logic, fallback behavior, and incorrectly passing landscape validation.
 
-SoundShape goes beyond traditional music visualization by **turning the 3D environment itself into a music editing interface**.
-
-Users can explore and modify musical properties spatially without learning complex production software. The platform also has potential applications in music education and interactive content creation.
-
----
-
-**Music Becomes a World. And the World Becomes Music.**
+These tests verify the implemented validation and repair logic. Successful live Gemini API repair calls must be confirmed separately from local corrections and mocked tests.
