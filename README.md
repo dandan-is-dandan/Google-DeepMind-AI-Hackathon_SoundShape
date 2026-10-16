@@ -51,6 +51,6 @@ The system supports local deterministic corrections and a separate Gemini API-ba
 
 ### Verification Results
 
-The verification suite passed **7 out of 7 automated tests**, including tests for invalid song durations, overlapping sections, missing sculptures, repair logic, fallback behavior, and incorrectly passing landscape validation.
+The verification suite passed **7 out of 7 automated tests**, including tests for invalid song durations, overlapping sections, missing sculptures, repair logic, fallback behavior, and a regression case preventing invalid landscape validation from being marked as passed.
 
-These tests verify the implemented validation and repair logic. Successful live Gemini API repair calls must be confirmed separately from local corrections and mocked tests.
+These tests verify the implemented validation and repair logic. Successful live Gemini API repair calls must be confirmed separately from local deterministic corrections and automated verification tests.
