@@ -1,0 +1,6 @@
+{
+  "name": "SoundShape — Music Becomes a World",
+  "description": "An interactive 3D music creation experience that transforms music clips into explorable virtual worlds with Gemini AI and Web Audio synthesis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
