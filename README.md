@@ -1,5 +1,3 @@
-# Google-DeepMind-AI-Hackathon
-
 # SoundShape — Music Becomes a World
 
 **An Interactive 3D Music Editing Platform Powered by Gemini 4 Argon**
@@ -20,6 +18,18 @@ Users explore the music through a **World → Section → Element** navigation s
 
 These changes are applied to the actual audio signal, allowing users to compare the original and edited versions through the Before/After feature.
 
+## System Architecture
+
+![SoundShape Architecture](./SoundShape%20Architecture.png)
+
+SoundShape consists of five main processing stages:
+
+1. **Audio Input:** Users upload MP3 or WAV files or select sample tracks.
+2. **Audio Analysis:** Web Audio API extracts measurable acoustic features, including energy, frequency characteristics, and rhythmic activity.
+3. **AI World Planning:** Gemini 4 Argon generates a structured world blueprint describing musical sections, landscapes, and editable objects.
+4. **3D World & Interaction:** Three.js renders the procedural world and provides spatial navigation and musical editing controls.
+5. **Audio Editing & Output:** The DSP engine applies supported edits to the uploaded audio signal and enables Before/After comparison.
+
 ## Gemini 4 Argon Integration
 
 Gemini 4 Argon combines musical timing and acoustic features to generate structured 3D world specifications.
@@ -37,6 +47,17 @@ This architecture connects **AI-driven musical interpretation, procedural 3D wor
 - **Before/After Comparison:** Listen to the original and modified audio passages.
 - **AI World Blueprint:** Inspect Gemini-generated world design specifications.
 - **Verification Loop:** Validate scene specifications and support automated repair of invalid outputs.
+
+## Technology Stack
+
+| Category | Technology |
+|---|---|
+| AI Model | Gemini 4 Argon |
+| Frontend | React, TypeScript |
+| 3D Rendering | Three.js |
+| Audio Analysis & Processing | Web Audio API, DSP |
+| AI Integration | Gemini API |
+| Deployment | Google Cloud Run |
 
 ## Originality & Impact
 
